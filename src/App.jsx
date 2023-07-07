@@ -42,24 +42,24 @@ function App() {
         <Button type="text" onClick={() => setFilter("jewelery")}>
           Jewelery
         </Button>
-      ), 
-    }, 
+      ),
+    },
     {
       key: '4',
-      label: ( 
-      <Button type="text" onClick={() => setFilter("men's clothing")}>
-        Men's clothing
-        </Button> 
-        ), 
-    }, 
+      label: (
+        <Button type="text" onClick={() => setFilter("men's clothing")}>
+          Men's clothing
+        </Button>
+      ),
+    },
     {
       key: '5',
       label: (
         <Button type="text" onClick={() => setFilter("women's clothing")}>
           Women's clothing
         </Button>
-      ), 
-    }, 
+      ),
+    },
   ];
 
   return (
@@ -69,7 +69,8 @@ function App() {
         <div style={{ width: "100%" }}>
 
           <div style={{ width: "100%", display: "flex", justifyContent: "space-between" }}>
-            
+
+            {/* this is category filter  */}
             <Dropdown
               menu={{
                 items,
@@ -83,7 +84,7 @@ function App() {
               </a>
             </Dropdown>
 
-
+            {/* this for product design will shown grid or table form  */}
             <Radio.Group optionType='button' defaultValue={1}>
               <Radio onChange={() => setGrid(true)} value={1}><AppstoreOutlined /></Radio>
               <Radio onChange={() => setGrid(false)} value={2}><BarsOutlined /></Radio>
@@ -94,6 +95,8 @@ function App() {
         </div>
       </div>
 
+
+      {/* product fetching  */}
       <div className='product-card' style={grid ? {} : { display: "flex", gap: 20, flexDirection: "column" }} >
         {
           product ? product?.filter(e => e.category === filter || filter === "All" && e).map((e, i) => (
