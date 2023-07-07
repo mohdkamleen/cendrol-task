@@ -5,7 +5,7 @@ const SingleProduct = ({ data, handleClose }) => {
 
     return (
         <>
-            <div style={{ zIndex: 10, position: "fixed", top: 0, left: 0, width: "100%", height: "100%", background: "white" }}>
+            <div style={{ zIndex: 999, position: "fixed", top: 0, left: 0, width: "100%", height: "100%", background: "white" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0 5%", height: "60px" }}>
                     <ArrowLeftOutlined style={{ fontSize: "20px", cursor: "pointer" }} onClick={handleClose} />
                     <font color="red">{data.id === 3 && "Out of stock"}</font>
